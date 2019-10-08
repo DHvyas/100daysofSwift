@@ -9,13 +9,20 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var toggle: UISwitch!
+    @IBOutlet weak var slider: UISlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     @IBAction func buttonTapped(_ sender: Any) {
         print("Button was tapped!")
+        if(toggle.isOn){
+            print("The Switch is ON")
+        }
+        else { print("The Switch is OFF")}
+        print("The Slider's value is : \(slider.value)")
     }
     
 
