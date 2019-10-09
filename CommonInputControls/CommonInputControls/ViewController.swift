@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet var button: UIButton!
     @IBOutlet weak var toggle: UISwitch!
     @IBOutlet weak var slider: UISlider!
     
@@ -16,6 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    button.addTarget(self, action : #selector(buttonTapped(_:)), for: .touchUpInside)
     @IBAction func buttonTapped(_ sender: Any) {
         print("Button was tapped!")
         if(toggle.isOn){
@@ -25,6 +27,10 @@ class ViewController: UIViewController {
         print("The Slider's value is : \(slider.value)")
     }
     
-
+    @IBAction func respondToTapGesture(_ sender: UITapGestureRecognizer) {
+        let location = sender.location(in: view)
+        print(location)
+    }
+    
 }
 

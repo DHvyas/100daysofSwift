@@ -19,9 +19,6 @@
                                 <rect key="frame" x="184" y="255" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="37H-sj-aDb"/>
-                                </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="IzK-SM-Dbj">
                                 <rect key="frame" x="148" y="433" width="118" height="30"/>
@@ -33,14 +30,24 @@
                             </switch>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="4M8-uE-mdg" appends="YES" id="Nyx-p2-Yjd"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="button" destination="y34-Xv-j4i" id="qGF-zr-oUQ"/>
                         <outlet property="slider" destination="IzK-SM-Dbj" id="gi0-Qi-Soa"/>
                         <outlet property="toggle" destination="HFq-57-4sz" id="LOL-wr-T1j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4M8-uE-mdg">
+                    <connections>
+                        <action selector="IBgestureTap:" destination="BYZ-38-t0r" id="7de-bz-tTR"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-57" y="117"/>
         </scene>
